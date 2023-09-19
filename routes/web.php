@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InventoryLabController;
+use App\Http\Controllers\LabController;
+use App\Http\Controllers\ManageInventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +24,9 @@ Route::get('/a', function () {
 });
 
 Route::get('/inventory', [InventoryLabController::class, 'inventory']);
+
+Route::resource('/manage-inventory-lab', ManageInventoryController::class);
+Route::get('/lab/{id}', [ManageInventoryController::class, 'lab']);
+
+Route::get('lab/tambah', [LabController::class, 'create1'])->name('lab.create');
+Route::post('lab/simpan', [LabController::class, 'store'])->name('lab.store');
