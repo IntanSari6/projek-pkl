@@ -32,7 +32,7 @@
             <li class="menu-header">Administrator</li>
 
             <li class="dropdown">
-                <a class="nav-link {{ Request::is('manage_lab_inventory') ? 'active' : '' }}" href="/manage_lab_inventory"><i class="fas fa-columns"></i> <span>Kelola Inventaris Lab</span></a>
+                <a class="nav-link {{ Request::is('manage-lab-inventory') ? 'active' : '' }}" href="/manage-lab-inventory"><i class="fas fa-columns"></i> <span>Kelola Inventaris Lab</span></a>
             </li>
 
             <li class="dropdown">
