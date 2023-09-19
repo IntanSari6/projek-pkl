@@ -17,10 +17,10 @@ class InventoryLabController extends Controller
         ]);
 
     }
-    public function lab_1()
+    public function labb()
     {
-        return view('inventory-lab.lab',[
-            'inventory' => InventoryLab::all(),
+        return view('inventory-lab.labb', [
+            'inventory' => InventoryLab::all()
         ]);
     }
 
