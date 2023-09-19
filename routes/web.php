@@ -23,7 +23,8 @@ Route::get('/a', function () {
     return view('main');
 });
 
-Route::get('/inventory', [InventoryLabController::class, 'inventory']);
+Route::get('/inventory-lab', [InventoryLabController::class, 'inventory']);
+Route::get('/labb/{id}', [InventoryLabController::class, 'labb']);
 
 Route::resource('/manage-inventory-lab', ManageInventoryController::class);
 Route::get('/lab/{id}', [ManageInventoryController::class, 'lab']);
