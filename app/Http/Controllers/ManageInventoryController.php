@@ -51,14 +51,20 @@ class ManageInventoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([
-            'nama_barang' => 'required',
-            'kode_barang' => 'required|unique:inventory_labs',
-            'status' => 'required',
-        ]); 
-        $validateData['user_id'] = auth()->user()->id;
+        $inventory= new InventoryLab;
+        $inventory->nama_barang = $request->nama_barang;
+        $inventory->kode_barang = $request->kode_barang;
+        $inventory->status = $request->status;
+        $inventory->lab_id = $request->lab_id;
+        $inventory->save();
+        // $validateData = $request->validate([
+        //     'nama_barang' => 'required',
+        //     'kode_barang' => 'required|unique:inventory_labs',
+        //     'status' => 'required',
+        // ]); 
+        // $validateData['user_id'] = auth()->user()->id;
 
-        InventoryLab::create($validateData);
+        // InventoryLab::create($validateData);
 
         return redirect('/manage-inventory-lab')->with('success', 'New post has been added!');
     }
@@ -71,7 +77,8 @@ class ManageInventoryController extends Controller
      */
     public function show(InventoryLab $inventory)
     {
-        return $inventory;
+        $inventory = InventoryLab::all();
+        return view('lab', compact (['inventory']));
     }
 
     /**

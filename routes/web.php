@@ -23,10 +23,11 @@ Route::get('/a', function () {
     return view('main');
 });
 
-Route::get('/inventory', [InventoryLabController::class, 'inventory']);
+Route::get('/inventory-lab', [InventoryLabController::class, 'inventory']);
+Route::get('/labb/{id}', [InventoryLabController::class, 'labb']);
 
 Route::resource('/manage-inventory-lab', ManageInventoryController::class);
 Route::get('/lab/{id}', [ManageInventoryController::class, 'lab']);
 
-Route::get('lab/tambah', [LabController::class, 'create1'])->name('lab.create');
+Route::get('lab/tambah', [LabController::class, 'create1'])->name('lab.create1');
 Route::post('lab/simpan', [LabController::class, 'store'])->name('lab.store');
