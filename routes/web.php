@@ -7,6 +7,7 @@ use App\Http\Controllers\LabController;
 use App\Http\Controllers\ManageInventoryController;
 use App\Http\Controllers\ReqloansController;
 use App\Http\Controllers\ManageLoansController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +23,11 @@ Route::get('/', function () {
     return view('landing-page');
 });
 
-Route::get('/a', function () {
-    return view('main');
-});
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
 
 Route::get('/inventory-lab', [InventoryLabController::class, 'inventory']);
 Route::get('/labb/{id}', [InventoryLabController::class, 'labb']);
