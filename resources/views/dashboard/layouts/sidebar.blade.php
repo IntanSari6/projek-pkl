@@ -16,8 +16,7 @@
             </li>
 
             <li class="dropdown">
-                <a class="nav-link {{ Request::is('inventory-lab') ? 'active' : '' }}" href="/inventory-lab"><i
-                        class="fas fa-columns"></i> <span>Inventaris Lab</span></a>
+                <a class="nav-link {{ Request::is('inventory-lab') ? 'active' : '' }}" href="/inventory-lab"><i class="fas fa-columns"></i> <span>Inventaris Lab</span></a>
             </li>
 
             <li class="dropdown">

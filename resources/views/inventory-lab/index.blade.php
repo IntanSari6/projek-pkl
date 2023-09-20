@@ -20,7 +20,7 @@
         {{-- <h4>Reports</h4> --}}
       </div>
       <div class="card-body">
-        <a href="/labb/{id}">{{$lab->nama_lab}}</a> 
+        <a href="/labb/{{$lab->id}}">{{$lab->nama_lab}}</a> 
       </div>
     </div>
   </div>
