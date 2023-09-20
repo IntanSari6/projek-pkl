@@ -36,6 +36,15 @@
             </div>
         @enderror
         </div>
+        <div class="mb-3">
+            <label for="lab_id" class="form-label">Lab</label>
+            <input type="number" class="form-control @error('lab_id') is-invalid @enderror" id="lab_id" name="lab_id" required value="{{old('lab_id')}}">
+            @error('lab_id')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+        @enderror
+        </div>
         
       <button type="submit" class="btn btn-primary">Tambah</button>
     </form>

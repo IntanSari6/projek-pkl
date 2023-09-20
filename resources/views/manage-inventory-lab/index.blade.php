@@ -38,7 +38,7 @@
 <br>
 <br>
   <div class="text-center buttons pt-3 pb-2 mt-9">
-    <a href="{{ route('lab.create') }}" class="btn btn-icon btn-primary">Tambah</a>
+    <a href="{{ route('lab.create1') }}" class="btn btn-icon btn-primary">Tambah</a>
   </div>  
 
 @endsection
