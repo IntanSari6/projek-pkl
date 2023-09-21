@@ -22,10 +22,11 @@ class ManageInventoryController extends Controller
 
         ]);
     }
-    public function lab()
+    public function lab(int $id)
     {
         return view('manage-inventory-lab.lab', [
-            'inventory' => InventoryLab::all()
+            'inventory' => InventoryLab::where('lab_id',$id)->get(),
+            'lab'=> Lab::find($id)
         ]);
     }
     // public function lab2()
@@ -66,7 +67,7 @@ class ManageInventoryController extends Controller
 
         // InventoryLab::create($validateData);
 
-        return redirect('/manage-inventory-lab')->with('success', 'New post has been added!');
+        return redirect('/lab/'.$inventory->lab_id)->with('success', 'New post has been added!');
     }
 
     /**
@@ -120,7 +121,7 @@ class ManageInventoryController extends Controller
             'status'=>$request->input('status'),
         ]);
 
-        return redirect('/manage-inventory-lab')->with('success', 'Post has been updated!');
+        return redirect('/lab/'.$edit->lab_id)->with('success', 'Post has been updated!');
     }
 
     /**

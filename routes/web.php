@@ -33,10 +33,11 @@ Route::get('/inventory-lab', [InventoryLabController::class, 'inventory']);
 Route::get('/labb/{id}', [InventoryLabController::class, 'labb']);
 
 Route::resource('/manage-inventory-lab', ManageInventoryController::class);
-Route::get('/lab/{id}', [ManageInventoryController::class, 'lab']);
 
-Route::get('lab/tambah', [LabController::class, 'create1'])->name('lab.create');
+Route::get('lab/tambah', [LabController::class, 'create1'])->name('lab.create1');
 Route::post('lab/simpan', [LabController::class, 'store'])->name('lab.store');
+Route::delete('lab/{id}', [LabController::class, 'destroy'])->name('lab.destroy');
+Route::get('/lab/{id}', [ManageInventoryController::class, 'lab']);
 
 Route::get('/manage_loans', [ManageLoansController::class, 'manage_loans']);
 

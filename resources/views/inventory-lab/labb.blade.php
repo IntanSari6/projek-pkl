@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
-    <h3>LAB 1</h3>
+    <h3>LAB {{$lab->nama_lab}}</h3>
 </div>
 <br>
 <div class="col-12 col-md-6 col-lg-12">
@@ -15,8 +15,10 @@
               Pilih
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="/lab_1">Lab 1</a>
-              <a class="dropdown-item" href="/lab_2">Lab 2</a>
+             @foreach ($lab as $lab)
+              <a class="dropdown-item" href="/labb/{{$lab->id}}">{{$lab->nama_lab}}</a>
+             @endforeach
+
             </div>
           </div>
       </div>

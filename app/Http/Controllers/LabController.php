@@ -28,9 +28,9 @@ class LabController extends Controller
         return view('index', compact (['lab']));
     }
 
-    public function destroy(Lab $lab,$id)
+    public function destroy($id)
     {
-        Lab::destroy($id);
-        return redirect('manage-inventory-lab.index')->with('success', 'Post has been deleted!');
+        Lab::where('id',$id)->delete();
+        return redirect()->back()->with('success', 'Post has been deleted!');
     }
 }
