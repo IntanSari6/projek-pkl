@@ -21,10 +21,10 @@
         {{-- <h4>Reports</h4> --}}
       </div>
       <div class="card-body">
-              <form action="/manage-inventory-lab/{{ $lab->id }}" method="POST" class="d-inline">
+              <form action="{{ route ('lab.destroy',$lab->id) }}" method="POST" class="d-inline">
                 @method('delete')
                 @csrf
-                <a href="" class=" text-right border-0 " onclick="return confirm('Are you sure?')"><i class="bi bi-x-circle-fill"></i></a>
+                <button type="submit" class=" text-right border-0 " ><i class="bi bi-x-circle-fill"></i></button>
               </form>
         <a href="/lab/{{$lab->id}}">{{$lab->nama_lab}}</a> 
       </div>

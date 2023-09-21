@@ -15,7 +15,7 @@ class LabSeeder extends Seeder
     public function run()
     {
         Lab::create([
-            'nama_lab' => 'lab 3',
+            'nama_lab' => 'lab 1',
             'warna' => 'danger',
         ]);
     }
