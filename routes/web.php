@@ -28,6 +28,7 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
+Route::get('/profile', [DashboardController::class, 'profile'])->middleware('auth');
 
 Route::get('/inventory-lab', [InventoryLabController::class, 'inventory']);
 Route::get('/labb/{id}', [InventoryLabController::class, 'labb']);

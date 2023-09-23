@@ -23,6 +23,7 @@
                             <th>Mulai</th>
                             <th>Selesai</th>
                             <th>Ulasan</th>
+                            <th>Status</th>
                         </tr>
                         @foreach ($reqloans as $req)
                             <tr>
@@ -35,7 +36,11 @@
                                 <td>{{ $req->mulai }}</td>
                                 <td>{{ $req->selesai }}</td>
                                 <td>{{ $req->ulasan }}</td>
-                                <td></td>
+                                <td>{{ $req->status }}</td>
+                                <td><a href="#" class="btn btn-icon btn-info"><i class="fas fa-info-circle"></i></a></td>
+                                <td><a href="#" class="btn btn-icon btn-warning"><i class="fas fa-exclamation-triangle"></i></a></td>
+                                <td><a href="#" class="btn btn-icon btn-success"><i class="fas fa-check"></i></a></td>
+                                <td><a href="#" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a></td>
                             </tr>
                         @endforeach
                     </table>

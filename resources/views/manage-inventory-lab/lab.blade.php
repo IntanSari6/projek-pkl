@@ -18,13 +18,12 @@
       <h4>Inventaris  {{$lab->nama_lab}}</h4>
       <div class="card-body">
         <div class="dropdown d-inline mr-2">
-        <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pilih
-            </button>
-            <div class="dropdown-menu">
-             @foreach ($lab as $lab)
-              <a class="dropdown-item" href="/lab/{{$lab->id}}">{{$lab->nama_lab}}</a>
-             @endforeach
+          <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pilih
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/lab1">Lab 1</a>
+            <a class="dropdown-item" href="/lab2">Lab 2</a>
 
           </div>
         </div>

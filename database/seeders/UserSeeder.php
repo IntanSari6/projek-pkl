@@ -15,15 +15,21 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'intan',
+            'name' => 'Intan',
             'email' => 'intan@gmail.com',
             'password' => bcrypt('12345'),
+            'nip' => '5643',
+            'subjects' => 'Matematika',
+            'gender' => 'Perempuan',
         ]);
 
         User::create([
-            'name' => 'iras',
+            'name' => 'Iras',
             'email' => 'sari@gmail.com',
             'password' => bcrypt('12345'),
+            'nip' => '7890',
+            'subjects' => 'Indonesia',
+            'gender' => 'Perempuan',
 
         ]);
     }

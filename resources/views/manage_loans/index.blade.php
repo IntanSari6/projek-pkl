@@ -122,8 +122,8 @@
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tolak</button>
-                                    <a href="/manage_schedule" class="btn btn-icon btn-primary">Terima</a>
+                                <a href="/ubah_statusLoans/{{ $req->id }}/tolak" class="btn btn-icon btn-secondary">Tolak</a>
+                                <a href="/ubah_statusLoans/{{ $req->id }}/terima" class="btn btn-icon btn-primary">Terima</a>
                                 </div>
                             </div>
                          </div>
