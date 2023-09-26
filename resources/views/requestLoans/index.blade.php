@@ -36,7 +36,6 @@
                                 <td>{{ $req->start }}</td>
                                 <td>{{ $req->finished }}</td>
                                 <td>{{ $req->review }}</td>
-                                <td></td>
                                 <td>
                                     @if($req->status=='terima')
                                     <a href="#" class="btn btn-icon btn-success"><i class="fas fa-check"></i></a>
