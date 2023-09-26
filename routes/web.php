@@ -23,7 +23,7 @@ use App\Http\Controllers\ScheduleController;
 */
 Route::get('/', function () {
     return view('landing-page');
-});
+})->name('beranda');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -35,12 +35,12 @@ Route::get('/profile', [DashboardController::class, 'profile'])->middleware('aut
 Route::get('/inventory-lab', [InventoryLabController::class, 'inventory']);
 Route::get('/labb/{id}', [InventoryLabController::class, 'labb']);
 
-Route::resource('/manage-inventory-lab', ManageInventoryController::class);
+Route::resource('manage-inventory-lab', ManageInventoryController::class);
 
 Route::get('lab/tambah', [LabController::class, 'create1'])->name('lab.create1');
 Route::post('lab/simpan', [LabController::class, 'store'])->name('lab.store');
 Route::delete('lab/{id}', [LabController::class, 'destroy'])->name('lab.destroy');
-Route::get('/lab/{id}', [ManageInventoryController::class, 'lab']);
+Route::get('/lab/{id}', [ManageInventoryController::class, 'lab'])->name('lab.index');
 
 Route::get('/manage_loans', [ManageLoansController::class, 'manage_loans']);
 

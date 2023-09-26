@@ -31,7 +31,7 @@
             <li class="menu-header">Administrator</li>
 
             <li class="dropdown">
-                <a class="nav-link {{ Request::is('manage-inventory-lab') ? 'active' : '' }}" href="/manage-inventory-lab"><i class="fas fa-columns"></i> <span>Kelola Inventaris Lab</span></a>
+                <a class="nav-link {{ (in_array(Route::currentRouteName(),['manage-inventory-lab.index','lab.index','lab.create1'])) ? 'active' : '' }}" href="/manage-inventory-lab"><i class="fas fa-columns"></i> <span>Kelola Inventaris Lab</span></a>
             </li>
 
             <li class="dropdown">

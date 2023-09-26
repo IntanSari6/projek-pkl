@@ -15,14 +15,14 @@ class ReqloansSeeder extends Seeder
     public function run()
     {
         Reqloans::create([
-            'nip_guru' => '0123',
-            'nama_guru' => 'gatau',
-            'kelas' => 'XII RPL',
-            'mata_pelajaran' => 'matematika',
+            'nip_teacher' => '0123',
+            'teacher_name' => 'gatau',
+            'class' => 'XII RPL',
+            'subject' => 'matematika',
             'lab' => '1',
-            'mulai' => '2023-09-20 14:15:00',
-            'selesai' => '2023-09-20 14:30:00',
-            'ulasan' => 'hallo',
+            'start' => '2023-09-20 14:15:00',
+            'finished' => '2023-09-20 14:30:00',
+            'review' => 'hallo',
             'status' => 'terima',
         ]);
     }

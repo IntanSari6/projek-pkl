@@ -28,14 +28,15 @@
                         @foreach ($reqloans as $req)
                             <tr>
                                 <td>{{ $req->id }}</td>
-                                <td>{{ $req->nip_guru }}</td>
-                                <td>{{ $req->nama_guru }}</td>
-                                <td>{{ $req->kelas }}</td>
-                                <td>{{ $req->mata_pelajaran }}</td>
+                                <td>{{ $req->nip_teacher }}</td>
+                                <td>{{ $req->teacher_name }}</td>
+                                <td>{{ $req->class }}</td>
+                                <td>{{ $req->subjects }}</td>
                                 <td>{{ $req->lab }}</td>
-                                <td>{{ $req->mulai }}</td>
-                                <td>{{ $req->selesai }}</td>
-                                <td>{{ $req->ulasan }}</td>
+                                <td>{{ $req->start }}</td>
+                                <td>{{ $req->finished }}</td>
+                                <td>{{ $req->review }}</td>
+                                <td></td>
                                 <td>
                                     @if($req->status=='terima')
                                     <a href="#" class="btn btn-icon btn-success"><i class="fas fa-check"></i></a>

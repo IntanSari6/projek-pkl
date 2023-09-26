@@ -15,14 +15,14 @@ class CreateRequestLoansTable extends Migration
     {
         Schema::create('request_loans', function (Blueprint $table) {
             $table->id();
-            $table->integer('nip_guru')->unique();
-            $table->string('nama_guru');
-            $table->string('kelas');
-            $table->string('mata_pelajaran');
+            $table->integer('nip_teacher')->unique();
+            $table->string('teacher_name');
+            $table->string('class');
+            $table->string('subjects');
             $table->integer('lab');
-            $table->datetime('mulai');
-            $table->datetime('selesai');
-            $table->text('ulasan');
+            $table->datetime('start');
+            $table->datetime('finished');
+            $table->text('review');
             $table->timestamps();
         });
     }
