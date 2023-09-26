@@ -23,6 +23,7 @@
                             <th>Mulai</th>
                             <th>Selesai</th>
                             <th>Ulasan</th>
+                            <th>Status</th>
                         </tr>
                         @foreach ($reqloans as $req)
                             <tr>
@@ -36,6 +37,15 @@
                                 <td>{{ $req->finished }}</td>
                                 <td>{{ $req->review }}</td>
                                 <td></td>
+                                <td>
+                                    @if($req->status=='terima')
+                                    <a href="#" class="btn btn-icon btn-success"><i class="fas fa-check"></i></a>
+                                    @elseif ($req->status=='tolak')
+                                    <a href="#" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a>
+                                    @elseif ($req->status=='proses')
+                                    <a href="#" class="btn btn-icon btn-warning"><i class="fas fa-exclamation-triangle"></i></a>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </table>
