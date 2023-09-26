@@ -36,11 +36,15 @@
                                 <td>{{ $req->mulai }}</td>
                                 <td>{{ $req->selesai }}</td>
                                 <td>{{ $req->ulasan }}</td>
-                                <td>{{ $req->status }}</td>
-                                <td><a href="#" class="btn btn-icon btn-info"><i class="fas fa-info-circle"></i></a></td>
-                                <td><a href="#" class="btn btn-icon btn-warning"><i class="fas fa-exclamation-triangle"></i></a></td>
-                                <td><a href="#" class="btn btn-icon btn-success"><i class="fas fa-check"></i></a></td>
-                                <td><a href="#" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a></td>
+                                <td>
+                                    @if($req->status=='terima')
+                                    <a href="#" class="btn btn-icon btn-success"><i class="fas fa-check"></i></a>
+                                    @elseif ($req->status=='tolak')
+                                    <a href="#" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a>
+                                    @elseif ($req->status=='proses')
+                                    <a href="#" class="btn btn-icon btn-warning"><i class="fas fa-exclamation-triangle"></i></a>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </table>

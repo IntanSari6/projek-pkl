@@ -8,6 +8,8 @@ use App\Http\Controllers\ManageInventoryController;
 use App\Http\Controllers\ReqloansController;
 use App\Http\Controllers\ManageLoansController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ManageScheduleController;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,10 @@ Route::get('/manage_loans', [ManageLoansController::class, 'manage_loans']);
 Route::get('/requestLoans', [ReqloansController::class, 'index']);
 Route::get('/requestLoans/create', [ReqloansController::class, 'create']);
 Route::post('/manage_loans/store', [ReqloansController::class, 'store']);
+
+Route::get('/manage_schedule', [ManageScheduleController::class, 'manage_schedule']);
+Route::get('/get-datamodal/{title}', [ManageScheduleController::class, 'get_datamodal'])->name('get-datamodal');
+
+Route::get('/schedule', [ScheduleController::class, 'schedule']);
+
+Route::get('ubah_statusLoans/{id}/{status}', [ManageLoansController::class,'update_status']);
