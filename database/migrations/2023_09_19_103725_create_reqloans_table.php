@@ -15,14 +15,15 @@ class CreateReqloansTable extends Migration
     {
         Schema::create('reqloans', function (Blueprint $table) {
             $table->id();
-            $table->integer('nip_guru')->unique();
-            $table->string('nama_guru');
-            $table->string('kelas');
-            $table->string('mata_pelajaran');
+            $table->integer('nip_teacher')->unique();
+            $table->string('teacher_name');
+            $table->string('class');
+            $table->string('subjects');
             $table->string('lab');
-            $table->dateTime('mulai');
-            $table->dateTime('selesai');
-            $table->text('ulasan');
+            $table->dateTime('start');
+            $table->dateTime('finished');
+            $table->text('review');
+            $table->string('status')->default('process');
             $table->timestamps();
         });
     }

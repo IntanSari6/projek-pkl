@@ -15,8 +15,8 @@ class CreateInventoryLabsTable extends Migration
     {
         Schema::create('inventory_labs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_barang');
-            $table->string('kode_barang');
+            $table->string('name_goods');
+            $table->string('item_code');
             $table->string('status');
             $table->integer('lab_id');
             $table->timestamps();

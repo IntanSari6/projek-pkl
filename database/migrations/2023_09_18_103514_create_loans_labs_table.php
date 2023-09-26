@@ -15,15 +15,15 @@ class CreateLoansLabsTable extends Migration
     {
         Schema::create('loans_labs', function (Blueprint $table) {
             $table->id();
-            $table->integer('nip_guru')->unique();
-            $table->string('nama_lab');
-            $table->string('kelas');
-            $table->string('mata_pelajaran');
-            $table->date('tanggal');
-            $table->string('durasi');
+            $table->integer('nip_teacher')->unique();
+            $table->string('lab_name');
+            $table->string('class');
+            $table->string('subjects');
+            $table->date('date');
+            $table->string('duration');
             $table->string('lab');
-            $table->string('status_peminjaman');
-            $table->text('ulasan');
+            $table->string('loan_status');
+            $table->text('review');
             $table->timestamps();
         });
     }

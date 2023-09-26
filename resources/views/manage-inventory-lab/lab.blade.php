@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
-  <h3>Kelola Inventaris {{$lab->nama_lab}}</h3>
+  <h3>Kelola Inventaris {{$lab->lab_name}}</h3>
 </div>
 <br>
 
@@ -15,16 +15,10 @@
 <div class="col-12 col-md-6 col-lg-12">
   <div class="card">
     <div class="card-header">
-      <h4>Inventaris  {{$lab->nama_lab}}</h4>
+      <h4>Inventaris  {{$lab->lab_name}}</h4>
       <div class="card-body">
         <div class="dropdown d-inline mr-2">
-        <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Pilih
-            </button>
-            <div class="dropdown-menu">
-             @foreach ($lab as $lab)
-              <a class="dropdown-item" href="/lab/{{$lab->id}}">{{$lab->nama_lab}}</a>
-             @endforeach
+   
 
           </div>
         </div>
@@ -48,8 +42,8 @@
           @foreach ($inventory as $inventory)
           <tr>
             <td>{{$loop->iteration}}</td>
-            <td>{{$inventory->nama_barang}}</td>
-            <td>{{$inventory->kode_barang}}</td>
+            <td>{{$inventory->name_goods}}</td>
+            <td>{{$inventory->item_code}}</td>
             <td>{{$inventory->status}}</td>
             <td>            
               <a href="/manage-inventory-lab/{{ $inventory->id }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>

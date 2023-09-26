@@ -15,8 +15,8 @@ class InventoryLabSeeder extends Seeder
     public function run()
     {
         InventoryLab::create([
-            'nama_barang'=>"mouse",
-            'kode_barang'=>"D001",
+            'name_goods'=>"mouse",
+            'item_code'=>"D001",
             'status'=>"rusak",
             'lab_id'=>1, 
         ]);

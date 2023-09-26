@@ -16,8 +16,8 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Beranda</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#Jadwal">Jadwal Peminjaman</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('beranda') }}">Beranda</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('beranda') }}#Jadwal">Jadwal Peminjaman</a></li>
             </ul>
           </div>
           </div>

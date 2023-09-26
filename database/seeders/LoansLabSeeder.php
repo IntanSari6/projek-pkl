@@ -15,15 +15,15 @@ class LoansLabSeeder extends Seeder
     public function run()
     {
         LoansLab::create([
-            'nip_guru' => '0101',
-            'nama_lab' => 'lab1',
-            'kelas'=>'11 rpl',
-            'mata_pelajaran'=>'pwpb',
-            'tanggal'=>'2023-07-01',
-            'durasi'=>'10.00-10.30',
+            'nip_teacher' => '0101',
+            'lab_name' => 'lab1',
+            'class'=>'11 rpl',
+            'subjects'=>'pwpb',
+            'date'=>'2023-07-01',
+            'duration'=>'10.00-10.30',
             'lab'=>'1',
-            'status_peminjaman'=>'diisi',
-            'ulasan'=>'apa yaaaaaaaaaaaaa',
+            'loan_status'=>'diisi',
+            'review'=>'apa yaaaaaaaaaaaaa',
         ]);
     }
 }

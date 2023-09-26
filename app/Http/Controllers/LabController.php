@@ -16,8 +16,8 @@ class LabController extends Controller
     public function store(Request $request)
     {
         $lab= new Lab;
-        $lab->nama_lab = $request->nama_lab;
-        $lab->warna = $request->warna;
+        $lab->lab_name = $request->nama_lab;
+        $lab->color = $request->warna;
         $lab->save();
         return redirect()->route('manage-inventory-lab.index');
     }
