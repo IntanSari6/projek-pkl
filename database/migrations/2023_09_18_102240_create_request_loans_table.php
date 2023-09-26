@@ -15,7 +15,7 @@ class CreateRequestLoansTable extends Migration
     {
         Schema::create('request_loans', function (Blueprint $table) {
             $table->id();
-            $table->integer('nip_teacher')->unique();
+            $table->integer('nip_teacher')->index();
             $table->string('teacher_name');
             $table->string('class');
             $table->string('subjects');
@@ -23,6 +23,7 @@ class CreateRequestLoansTable extends Migration
             $table->datetime('start');
             $table->datetime('finished');
             $table->text('review');
+            $table->string('status')->default('process');
             $table->timestamps();
         });
     }

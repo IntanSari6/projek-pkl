@@ -16,19 +16,19 @@
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">NIP</label>
                             <div class="col-sm-12 col-md-7">
-                                <input type="text" name="nip_guru" class="form-control">
+                                <input type="text" name="nip_teacher" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Nama</label>
                             <div class="col-sm-12 col-md-7">
-                                <input type="text" name="nama_guru" class="form-control">
+                                <input type="text" name="teacher_name" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Kelas</label>
                             <div class="col-sm-12 col-md-7">
-                                <select name="kelas" class="form-control selectric">
+                                <select name="class" class="form-control selectric">
                                     <option>X PPLG</option>
                                     <option>X DKV 1</option>
                                     <option>X DKV 2</option>
@@ -45,7 +45,7 @@
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Mapel</label>
                             <div class="col-sm-12 col-md-7">
-                                <input type="text" name="mata_pelajaran" class="form-control">
+                                <input type="text" name="subjects" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
@@ -60,20 +60,20 @@
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Mulai</label>
                             <div class="col-sm-12 col-md-7">
-                                <input type="datetime-local" name="mulai" class="form-control">
+                                <input type="datetime-local" name="start" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Selesai</label>
                             <div class="col-sm-12 col-md-7">
-                                <input type="datetime-local" name="selesai" class="form-control">
+                                <input type="datetime-local" name="finished" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Ulasan</label>
                             <div class="col-sm-12 col-md-7">
-                                <textarea name="ulasan" class="summernote-simple"></textarea>
+                                <textarea name="review" class="summernote-simple"></textarea>
                             </div>
                         </div>
                         <br>

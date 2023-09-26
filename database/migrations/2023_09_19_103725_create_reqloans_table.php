@@ -15,7 +15,7 @@ class CreateReqloansTable extends Migration
     {
         Schema::create('reqloans', function (Blueprint $table) {
             $table->id();
-            $table->integer('nip_teacher')->unique();
+            $table->integer('nip_teacher')->index();
             $table->string('teacher_name');
             $table->string('class');
             $table->string('subjects');
