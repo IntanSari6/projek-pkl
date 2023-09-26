@@ -27,6 +27,12 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style2.css')}}" />
     <link rel="stylesheet" href="{{ asset('assets/css/components.css')}}" />
 
+    <style>
+        .modal-backdrop {
+            display: none !important;
+        }
+    </style>
+
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('dist/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('dist/assets/css/components.css')}}">
@@ -104,7 +110,7 @@
     <script src="{{ asset('dist/assets/js/scripts.js')}}"></script>
     <script src="{{ asset('dist/assets/js/custom.js')}}"></script>
 
-    </head>
+    @stack('script')
 </body>
 
 </html>
