@@ -6,10 +6,11 @@
     </div>
     <br>
     <div class="col-12 col-md-6 col-lg-12">
+        <div class="buttons pt-3 pb-2 mt-9">
+        <a href="/requestLoans/create" class="btn btn-icon btn-primary">Lanjut</a>
+    </div>
+    </div>
         <div class="card">
-            <div class="card-header">
-                <h4>Riwayat Peminjaman Lab</h4>
-            </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-striped table-md">
@@ -22,7 +23,7 @@
                             <th>Lab</th>
                             <th>Mulai</th>
                             <th>Selesai</th>
-                            <th>Ulasan</th>
+                            <th>Pesan</th>
                             <th>Status</th>
                         </tr>
                         @foreach ($reqloans as $req)
@@ -38,11 +39,15 @@
                                 <td>{{ $req->review }}</td>
                                 <td>
                                     @if($req->status=='terima')
-                                    <a href="#" class="btn btn-icon btn-success"><i class="fas fa-check"></i></a>
+                                    <a href="#" class="btn btn-info">Diterima</a>
                                     @elseif ($req->status=='tolak')
-                                    <a href="#" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a>
+                                    <a href="#" class="btn btn-danger">Ditolak</a>
                                     @elseif ($req->status=='proses')
-                                    <a href="#" class="btn btn-icon btn-warning"><i class="fas fa-exclamation-triangle"></i></a>
+                                    <a href="#" class="btn btn-warning">Proses</a>
+                                    @elseif ($req->status=='sedang dipakai')
+                                    <a href="#" class="btn btn-primary">Sedang dipakai</a>
+                                    @elseif ($req->status=='hapus')
+                                    <a href="#" class="btn btn-success">Selesai</a>
                                     @endif
                                 </td>
                             </tr>
@@ -72,7 +77,5 @@
             </div>
         </div>
     </div>
-    <div class="text-center buttons pt-3 pb-2 mt-9">
-        <a href="/requestLoans/create" class="btn btn-icon btn-primary">Next</a>
-    </div>
+   
 @endsection

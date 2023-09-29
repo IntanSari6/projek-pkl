@@ -2,13 +2,12 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
-        <h3>Kelola Riwayat Peminjaman</h3>
+        <h3>Kelola Peminjaman Lab</h3>
     </div>
     <br>
     <div class="col-12 col-md-6 col-lg-12">
         <div class="card">
             <div class="card-header">
-                <h4>Riwayat Peminjaman Lab</h4>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -22,7 +21,7 @@
                             <th>Lab</th>
                             <th>Mulai</th>
                             <th>Selesai</th>
-                            <th>Ulasan</th>
+                            <th>Pesan</th>
                             <th>Aksi</th>
                         </tr>
                         @foreach ($reqloans as $req)
@@ -114,7 +113,7 @@
                                                 <td>{{ $req->finished }}</td>
                                             </tr>
                                             <tr>
-                                                <th>Ulasan :</th>
+                                                <th>Pesan :</th>
                                                 <td>{{ $req->review }}</td>
                                             </tr>
                                         </tbody>
@@ -122,7 +121,7 @@
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                <a href="/ubah_statusLoans/{{ $req->id }}/tolak" class="btn btn-icon btn-secondary">Tolak</a>
+                                <a href="/ubah_statusLoans/{{ $req->id }}/tolak" class="btn btn-icon btn-danger">Tolak</a>
                                 <a href="/ubah_statusLoans/{{ $req->id }}/terima" class="btn btn-icon btn-primary">Terima</a>
                                 </div>
                             </div>

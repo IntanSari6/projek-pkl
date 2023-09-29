@@ -23,7 +23,7 @@ class CreateReqloansTable extends Migration
             $table->dateTime('start');
             $table->dateTime('finished');
             $table->text('review');
-            $table->string('status')->default('process');
+            $table->string('status')->default('proses');
             $table->timestamps();
         });
     }

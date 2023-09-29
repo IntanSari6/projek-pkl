@@ -7,7 +7,6 @@
                 <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
                     <div data-aos="zoom-out">
                         <h1>Selamat Datang Di Website Laboratorium SMKS Mahaputra Cerdas Utama</h1>
-                        <h2>Welcome to the Mahaputra Smart Utama SMKS Laboratory Website</h2>
                         <div class="text-center text-lg-start">
                         </div>
                     </div>
@@ -26,29 +25,21 @@
         <section id="about" class="about">
             <div class="container-fluid">
 
-                <div class="row">
-                    <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center margin-right: 0px margin-left:100px align-items-stretch"
-                        data-aos="fade-right">
-                    </div>
 
-                    <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5"
+                    <div class="col-xl-10 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5"
                         data-aos="fade-left">
                         <h3>Tata Tertib Penggunaan Lab</h3>
                         <p>SMKS Mahaputra Cerdas Utama</p>
-
-                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-                            <p>1. Semua siswa aktif berhak atas pemanfaatan komputer</p>
-                            <p>2. Siswa berhak menggunakan komputer pada saat jam sekolah</p>
-                            <p>3. Setiap siswa hanya boleh menggunakan satu komputer dalam satu waktu</p>
-                            <p>4. Siswa yang tidak mematuhi peraturan/ketentuan maka akan mendapat sanksi</p>
-                            <p>5. Siswa dilarang menghapus, menginstall software atau memodifikasi program komputer di lab
-                            </p>
-                            <p>6. Siswa dilarang merusak, memindahkan, atau mengambil hardware, software atau fasilitas lab
-                                tanpa seijin petugas lab</p>
-                            <p>7. Setiap siswa harus mematikan komputer dan CPU maupun layar monitor setiap kali selesai
-                                menggunakan komputer</p>
-                            <p>8. Siswa yang merusak alat alat penunjang praktikum diwajibkan untuk menggantinya</p>
-                            <p>9. Setiap siswa harus menjaga kebersihan dan kerapihan lab</p>
+                        <div>
+                            <p>1. Selalu menjaga kebersihan dan kerapihan lab</p>
+                            <p>2. Berhak menggunakan komputer pada saat jam sekolah</p>
+                            <p>3. Hanya boleh mengggunakan satu komputer dalam satu waktu </p>
+                            <p>4. Jika tidak mematuhi peraturan atau ketentuan maka akan mendapat sanksi</p>
+                            <p>5. Jika merusak alat alat penunjang praktikum diwajibkan untuk menggantinya </p>
+                            <p>6. Dilarang menghapus, menginstall software atau memodifikasi program komputer di lab</p>
+                            <p>7. Mematikan komputer dan CPU maupun layar monitor setiap kali selesai menggunakan komputer</p>
+                            <p>8. Tidak boleh membuka, mendownload, ataupun menyimpan file berbau pornografi, rasis dan sebagainya</p>
+                            <p>9.  Dilarang merusak, memindahkan, atau mengambil hardware, software atau fasilitas lab tanpa seijin petugas lab</p>
                         </div>
                     </div>
                 </div>
@@ -81,20 +72,24 @@
                                                 <th>Kelas</th>
                                                 <th>Mata Pelajaran</th>
                                                 <th>Lab</th>
-                                                <th>Durasi</th>
+                                                <th>Mulai</th>
+                                                <th>Selesai</th>
                                                 <th>Status</th>
                                             </tr>
+                                            @foreach ($reqloan as $req)
                                             <tr>
-                                                <td>01</td>
-                                                <td>Inul</td>
-                                                <td>12 RPL</td>
-                                                <td>PWPB</td>
-                                                <td>Lab 1</td>
-                                                <td>12.00-13.00</td>
+                                                <td>{{$loop->iteration}}</td>
+                                                <td>{{$req->teacher_name}}</td>
+                                                <td>{{$req->class}}</td>
+                                                <td>{{$req->subjects}}</td>
+                                                <td>{{$req->lab}}</td>
+                                                <td>{{ $req->start }}</td>
+                                                <td>{{ $req->finished }}</td>
                                                 <td>
-                                                    <div class="badge badge-success">sedang dipakai</div>
+                                                    <div class="badge badge-primary">{{ $req->status }}</div>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </table>
                                     </div>
                                 </div>

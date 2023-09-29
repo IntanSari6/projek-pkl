@@ -12,7 +12,7 @@
             <li class="menu-header">Dashboard</li>
             <li class="dropdown">
                 <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard"><i
-                        class="fas fa-fire"></i><span>Beranda</span></a>
+                        class="fas fa-fire"></i><span>Tata Tertib</span></a>
             </li>
 
             <li class="dropdown">

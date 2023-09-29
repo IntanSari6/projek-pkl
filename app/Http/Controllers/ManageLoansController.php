@@ -10,7 +10,7 @@ class ManageLoansController extends Controller
 {
     public function manage_loans()
     {
-        $reqloans = Reqloans::where('status', 'process')->get();;
+        $reqloans = Reqloans::where('status', 'proses')->latest()->get();;
         return view('manage_loans.index', compact('reqloans'));
     }
 
