@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'nip' => '5643',
             'subjects' => 'Matematika',
             'gender' => 'Perempuan',
+            'image' => 'intan.jpg'
         ]);
 
         User::create([
@@ -30,7 +31,7 @@ class UserSeeder extends Seeder
             'nip' => '7890',
             'subjects' => 'Indonesia',
             'gender' => 'Perempuan',
-
+            'image' => 'intann.png'
         ]);
     }
 }

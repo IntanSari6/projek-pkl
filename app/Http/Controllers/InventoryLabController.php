@@ -13,15 +13,17 @@ class InventoryLabController extends Controller
         $lab = Lab::all();
         return view('inventory-lab.index', [
             'inventory' => InventoryLab::all(),
-            'lab' => $lab  
+            'lab' => $lab
         ]);
 
     }
     public function labb(int $id)
     {
+        $lab = Lab::all();
         return view('inventory-lab.labb', [
-            'inventory' => InventoryLab::where('lab_id',$id)->get(),
-            'lab'=> Lab::find($id)
+            'inventory' => InventoryLab::where('lab_id',$id)->paginate(5),
+            'lab'=> Lab::find($id),
+            'labs' => $lab
         ]);
     }
 

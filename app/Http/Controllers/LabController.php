@@ -16,8 +16,8 @@ class LabController extends Controller
     public function store(Request $request)
     {
         $lab= new Lab;
-        $lab->lab_name = $request->nama_lab;
-        $lab->color = $request->warna;
+        $lab->lab_name = $request->lab_name;
+        $lab->color = $request->color;
         $lab->save();
         return redirect()->route('manage-inventory-lab.index');
     }
@@ -31,6 +31,6 @@ class LabController extends Controller
     public function destroy($id)
     {
         Lab::where('id',$id)->delete();
-        return redirect()->back()->with('success', 'Post has been deleted!');
+        return redirect()->back()->with('success', 'Lab has been deleted!');
     }
 }

@@ -24,9 +24,11 @@ class ManageInventoryController extends Controller
     }
     public function lab(int $id)
     {
+        $lab = Lab::all();
         return view('manage-inventory-lab.lab', [
-            'inventory' => InventoryLab::where('lab_id',$id)->get(),
-            'lab'=> Lab::find($id)
+            'inventory' => InventoryLab::where('lab_id',$id)->paginate(5),
+            'lab'=> Lab::find($id),
+            'labs' => $lab,
         ]);
     }
     // public function lab2()
@@ -53,8 +55,8 @@ class ManageInventoryController extends Controller
     public function store(Request $request)
     {
         $inventory= new InventoryLab;
-        $inventory->nama_barang = $request->nama_barang;
-        $inventory->kode_barang = $request->kode_barang;
+        $inventory->name_goods = $request->name_goods;
+        $inventory->item_code = $request->item_code;
         $inventory->status = $request->status;
         $inventory->lab_id = $request->lab_id;
         $inventory->save();

@@ -10,29 +10,18 @@
     <form method="post" action="{{ route('lab.store') }}" class="mb-5" enctype="multipart/form-data">
         @csrf
       <div class="mb-3">
-        <label for="nama_lab" class="form-label">Nama Lab</label>
-        <input type="text" class="form-control  @error('nama_lab') is-invalid @enderror" id="nama_lab" name="nama_lab" required autofocus value="{{old('nama_lab')}}">
-        @error('nama_lab')
+        <label for="lab_name" class="form-label">Nama Lab</label>
+        <input type="text" class="form-control  @error('lab_name') is-invalid @enderror" id="lab_name" name="lab_name" required autofocus value="{{old('lab_name')}}">
+        @error('lab_name')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>
         @enderror
       </div>
       <div class="mb-3">
-        <label for="warna" class="form-label">Warna</label>
-        <div class="col-sm-12 col-md-7">
-          <select name="class" class="form-control selectric">
-            <option>primary</option>
-            <option>secondary</option>
-            <option>success</option>
-            <option>danger</option>
-            <option>warning</option>
-            <option>info</option>
-          </select>
-        </div>
-        <!-- <input type="text" class="form-control @error('warna') is-invalid @enderror" id="warna" name="warna" required value="{{old('warna')}}"> -->
-        
-        @error('warna')
+        <label for="color" class="form-label">Warna</label>
+        <input type="text" class="form-control @error('color') is-invalid @enderror" id="color" name="color" required value="{{old('color')}}">
+        @error('color')
         <div class="invalid-feedback">
             {{ $message }}
         </div>

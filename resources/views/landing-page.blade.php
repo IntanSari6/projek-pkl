@@ -2,7 +2,7 @@
 
 @section('container')
     <section id="hero">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
                     <div data-aos="zoom-out">
@@ -23,7 +23,7 @@
 
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
-            <div class="container-fluid">
+            <div class="container">
 
 
                     <div class="col-xl-10 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5"
@@ -94,22 +94,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer text-right">
-                                    <nav class="d-inline-block">
-                                        <ul class="pagination mb-0">
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                                            </li>
-                                            <li class="page-item active"><a class="page-link" href="#">1 <span
-                                                        class="sr-only">(current)</span></a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">2</a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                    {!! $reqloan->links()!!}
                                 </div>
                     
                             </div>

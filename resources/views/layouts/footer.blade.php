@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
   
-          <div class="col-lg-9 col-md-50">
+          <div class="col-lg-12 col-md-6">
             <div class="footer-info">
               <h3>SMKS MAHAPUTRA CERDAS UTAMA
               </h3>
@@ -12,11 +12,6 @@
               <p class="pb-3"><em>0895-6304-68373</em></p>
             </div>
           </div>
-          </div>
-  
-        </div>
-      </div>
-    </div>
   
     <div class="container">
       <div class="copyright">

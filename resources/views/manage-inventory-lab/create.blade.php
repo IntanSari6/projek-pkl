@@ -10,18 +10,18 @@
     <form method="post" action="/manage-inventory-lab" class="mb-5" enctype="multipart/form-data">
         @csrf
       <div class="mb-3">
-        <label for="nama_barang" class="form-label">Nama Barang</label>
-        <input type="text" class="form-control  @error('nama_barang') is-invalid @enderror" id="nama_barang" name="nama_barang" required autofocus value="{{old('nama_barang')}}">
-        @error('nama_barang')
+        <label for="name_goods" class="form-label">Nama Barang</label>
+        <input type="text" class="form-control  @error('name_goods') is-invalid @enderror" id="name_goods" name="name_goods" required autofocus value="{{old('name_goods')}}">
+        @error('name_goods')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>
         @enderror
       </div>
       <div class="mb-3">
-        <label for="kode_barang" class="form-label">Kode Barang</label>
-        <input type="text" class="form-control @error('kode_barang') is-invalid @enderror" id="kode_barang" name="kode_barang" required value="{{old('kode_barang')}}">
-        @error('kode_barang')
+        <label for="item_code" class="form-label">Kode Barang</label>
+        <input type="text" class="form-control @error('item_code') is-invalid @enderror" id="item_code" name="item_code" required value="{{old('item_code')}}">
+        @error('item_code')
         <div class="invalid-feedback">
             {{ $message }}
         </div>

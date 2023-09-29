@@ -8,16 +8,16 @@
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
             <h3>Profil</h3>
         </div>
-    
+    <br>
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="/dist/assets/img/avatar/avatar-1.png" alt="Admin" class="rounded-circle" width="150">
+                    <img src="/dist/assets/img/{{ auth()->user()->image }}" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4>{{ auth()->user()->name }}</h4>
-                      <p class="text-secondary mb-1">{{ auth()->user()->subjects }}</p>
+                      <p class="text-secondary mb-1">{{ auth()->user()->gender }}</p>
                     </div>
                   </div>
                 </div>
@@ -62,11 +62,7 @@
                     </div>
                   </div>
                   <hr>
-                  <hr>
-                </div>
-              </div>
-
-
+                  </div>
             </div>
           </div>
 

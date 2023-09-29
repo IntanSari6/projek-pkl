@@ -22,8 +22,9 @@
             Pilih
           </button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="/lab1">Lab 1</a>
-            <a class="dropdown-item" href="/lab2">Lab 2</a>
+            @foreach ($labs as $lab)
+            <a class="dropdown-item" href="/lab/{{$lab->id}}">{{$lab->lab_name}}</a>
+           @endforeach
 
           </div>
         </div>
@@ -44,15 +45,15 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($inventory as $inventory)
+          @foreach ($inventory as $bebas)
           <tr>
             <td>{{$loop->iteration}}</td>
-            <td>{{$inventory->name_goods}}</td>
-            <td>{{$inventory->item_code}}</td>
-            <td>{{$inventory->status}}</td>
+            <td>{{$bebas->name_goods}}</td>
+            <td>{{$bebas->item_code}}</td>
+            <td>{{$bebas->status}}</td>
             <td>            
-              <a href="/manage-inventory-lab/{{ $inventory->id }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
-              <form action="/manage-inventory-lab/{{ $inventory->id }}" method="POST" class="d-inline">
+              <a href="/manage-inventory-lab/{{ $bebas->id }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
+              <form action="/manage-inventory-lab/{{ $bebas->id }}" method="POST" class="d-inline">
                 @method('delete')
                 @csrf
                 <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><i class="bi bi-x-circle"></i></button>
@@ -66,21 +67,7 @@
     </div>
 
     <div class="card-footer text-right">
-      <nav class="d-inline-block">
-        <ul class="pagination mb-0">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-          </li>
-          <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">2</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-          </li>
-        </ul>
-      </nav>
+      {!! $inventory->links()!!}
     </div>
   </div>
 </div>

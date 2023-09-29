@@ -9,7 +9,7 @@ class ReqloansController extends Controller
 {
     public function index()
     {
-        $reqloans = Reqloans::latest()->get();
+        $reqloans = Reqloans::latest()->paginate(5);
         return view('requestLoans.index', compact(['reqloans']));
 
     }
