@@ -2,16 +2,15 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
-        <h3>Request Peminjaman Lab</h3>
+        <h3>Form Request Peminjaman Lab</h3>
     </div> <br>
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <h4>Form Peminjaman</h4>
-                </div>
+                
                 <form action="/manage_loans/store" method="post">
                     @csrf
+                    <br>
                     <div class="card-body">
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">NIP</label>
@@ -71,9 +70,9 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label class="col-form-label col-1 col-md-1 col-lg-1">Ulasan</label>
+                            <label class="col-form-label col-1 col-md-1 col-lg-1">Pesan</label>
                             <div class="col-sm-12 col-md-7">
-                                <textarea name="review" class="summernote-simple"></textarea>
+                                <input type="text" name="review" class="form-control">
                             </div>
                         </div>
                         <br>

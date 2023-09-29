@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
   
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-9 col-md-50">
             <div class="footer-info">
               <h3>SMKS MAHAPUTRA CERDAS UTAMA
               </h3>
@@ -11,14 +11,6 @@
               <p class="pb-3"><em>smkmahaputracerdasutama@gmail.com</em></p>
               <p class="pb-3"><em>0895-6304-68373</em></p>
             </div>
-          </div>
-  
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('beranda') }}">Beranda</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('beranda') }}#Jadwal">Jadwal Peminjaman</a></li>
-            </ul>
           </div>
           </div>
   

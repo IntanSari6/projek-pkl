@@ -33,7 +33,7 @@
                             <form action="/login" method="post" class="needs-validation" novalidate="">
                               @csrf
                                 <div class="form-group">
-                                    <label for="email">Email address</label>
+                                    <label for="email">Email</label>
                                   <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@gmail.com" authofocus required value="{{ old('email') }}">
                                   
                                   @error('email')
@@ -45,9 +45,9 @@
 
                                 <div class="form-group">
                                     
-                                    <label for="password">Password</label>
+                                    <label for="password">Kata Sandi</label>
                                     <div class="d-block">
-                                      <input type="password" name="password" class="form-control" id="password" placeholder="password" required>
+                                      <input type="password" name="password" class="form-control" id="password" placeholder="Kata Sandi" required>
                                       
                                     </div>
                                 </div>
@@ -59,16 +59,15 @@
                                 </div>
                             </form>
                         </div>
-
                     </div>
+                    <div class="login-brand mt-3">
+    <h4><img src="assets/img/logo mahput.jpeg" alt="logo" width="30" class="shadow-light rounded-circle">
+        LABKOM</h4>
+</div>
                 </div>
             </div>
         </div>
 </div>
 </section>
-<div class="login-brand">
-    <h4><img src="assets/img/stisla-fill.svg" alt="logo" width="30" class="shadow-light rounded-circle">
-        LABKOM</h4>
-</div>
 </div>
 @endsection

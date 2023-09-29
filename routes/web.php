@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InventoryLabController;
 use App\Http\Controllers\LabController;
@@ -21,9 +22,7 @@ use App\Http\Controllers\ScheduleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('landing-page');
-})->name('beranda');
+Route::get('/', [LandingPageController::class, 'landing_page'])->name('beranda');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -50,7 +49,9 @@ Route::post('/manage_loans/store', [ReqloansController::class, 'store']);
 
 Route::get('/manage_schedule', [ManageScheduleController::class, 'manage_schedule']);
 Route::get('/get-datamodal/{title}', [ManageScheduleController::class, 'get_datamodal'])->name('get-datamodal');
+Route::get('/get_deletedatamodal/{id}', [ManageScheduleController::class, 'get_deletedatamodal'])->name('get_deletedatamodal');
 
 Route::get('/schedule', [ScheduleController::class, 'schedule']);
+Route::get('/get_sedangdipakaidatamodal/{id}', [ScheduleController::class, 'get_sedangdipakaidatamodal'])->name('get_sedangdipakaidatamodal');
 
 Route::get('ubah_statusLoans/{id}/{status}', [ManageLoansController::class,'update_status']);

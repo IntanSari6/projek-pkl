@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
-        <h3>Jadwal peminjaman</h3>
+        <h3>Kelola Jadwal Peminjaman Lab</h3>
     </div><br>
     <div class="row">
         <div id="app">
@@ -12,7 +12,6 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Calendar</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="fc-overflow">
@@ -26,7 +25,7 @@
             </section>
         </div>
     </div>
-    <button type="button" id='callmodal' data-toggle="modal" data-target="#staticBackdrop"></button>
+    <button type="button" hidden id='callmodal' data-toggle="modal" data-target="#staticBackdrop"></button>
     <div class="modal fade" id="staticBackdrop"  data-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                          <div class="modal-dialog modal-dialog-centered">
@@ -43,19 +42,19 @@
                                         <tbody>
                                             <tr>
                                                 <th>NIP :</th>
-                                                <td id='datamodal-nip'></td>
+                                                <td id='datamodal-nip_teacher'></td>
                                             </tr>
                                             <tr>
                                                 <th>Nama :</th>
-                                                <td id='datamodal-nama_guru'></td>
+                                                <td id='datamodal-teacher_name'></td>
                                             </tr>
                                             <tr>
                                                 <th>Kelas :</th>
-                                                <td id='datamodal-kelas'></td>
+                                                <td id='datamodal-class'></td>
                                             </tr>
                                             <tr>
                                                 <th>Mata Pelajaran :</th>
-                                                <td id='datamodal-mata_pelajaran'></td>
+                                                <td id='datamodal-subjects'></td>
                                             </tr>
                                             <tr>
                                                 <th>Lab :</th>
@@ -63,23 +62,22 @@
                                             </tr>
                                             <tr>
                                                 <th>Mulai :</th>
-                                                <td id='datamodal-mulai'></td>
+                                                <td id='datamodal-start'></td>
                                             </tr>
                                             <tr>
                                                 <th>Selesai :</th>
-                                                <td id='datamodal-selesai'></td>
+                                                <td id='datamodal-finished'></td>
                                             </tr>
                                             <tr>
                                                 <th>Ulasan :</th>
-                                                <td id='datamodal-ulasan'></td>
+                                                <td id='datamodal-review'></td>
                                             </tr>
                                         </tbody>
 
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                <a href="/ubah_statusLoans//tolak" class="btn btn-icon btn-secondary">Tolak</a>
-                                <a href="/ubah_statusLoans//terima" class="btn btn-icon btn-primary">Terima</a>
+                                <a href="" id="datamodal-hapus" class="btn btn-icon btn-primary">Batalkan</a>
                                 </div>
                             </div>
                          </div>
@@ -99,10 +97,10 @@ $("#KalenderPeminjaman").fullCalendar({
   events: [
     @foreach($reqloan as $item)
     {
-      title: '{{$item->id}}-{{$item->nama_guru}}',
-      start: '{{$item->mulai}}',
-      end: '{{$item->selesai}}',
-      backgroundColor: "#fff",
+      title: '{{$item->id}}-{{$item->teacher_name}}',
+      start: '{{$item->start}}',
+      end: '{{$item->finished}}',
+      backgroundColor: "#6777ee",
       borderColor: "#fff",
       textColor: '#000'
     },
@@ -116,15 +114,15 @@ $("#KalenderPeminjaman").fullCalendar({
         url: "/get-datamodal/"+info.title,
         success: function(res){
             console.log(res);
-
-            $('#datamodal-nip').text(res.nip_guru);
-            $('#datamodal-nama_guru').text(res.nama_guru);
-            $('#datamodal-kelas').text(res.kelas);
-            $('#datamodal-mata_pelajaran').text(res.mata_pelajaran);
+            $('#datamodal-hapus').attr('href','get_deletedatamodal/'+res.id);
+            $('#datamodal-nip_teacher').text(res.nip_teacher);
+            $('#datamodal-teacher_name').text(res.teacher_name);
+            $('#datamodal-class').text(res.class);
+            $('#datamodal-subjects').text(res.subjects);
             $('#datamodal-lab').text(res.lab);
-            $('#datamodal-mulai').text(res.mulai);
-            $('#datamodal-selesai').text(res.selesai);
-            $('#datamodal-ulasan').text(res.ulasan);
+            $('#datamodal-start').text(res.start);
+            $('#datamodal-finished').text(res.finished);
+            $('#datamodal-review').text(res.review);
         }
     })
   }
