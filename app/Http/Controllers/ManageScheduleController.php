@@ -20,15 +20,20 @@ class ManageScheduleController extends Controller
             $reqloan->action='/get_sedangdipakaidatamodal/'.$reqloan->id;
             $reqloan->action_text='masuk';
          }elseif($reqloan->status=='sedang dipakai'){
-            $reqloan->action='/get_deletedatamodal/'.$reqloan->id;   
+            $reqloan->action='/get_selesaidatamodal/'.$reqloan->id;   
             $reqloan->action_text='selesai';
+        }
+        if($reqloan->user_id==auth()->user()->id) {
+            $reqloan->action_button='show';
+        }else {
+            $reqloan->action_button='hide';
         }
         return response()->json($reqloan);
     }
 
-    public function get_deletedatamodal(string $id){
+    public function get_bataldatamodal(string $id){
         $reqloan = Reqloans::where('id', $id)->update([
-            'status'=>'hapus'
+            'status'=>'batal'
         ]);
         return back();
     }

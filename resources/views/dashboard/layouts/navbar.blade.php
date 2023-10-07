@@ -9,18 +9,21 @@
       </form>
       <ul class="navbar-nav navbar-right">
         <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-          <img alt="image" src="/dist/assets/img/{{ auth()->user()->image }}" class="rounded-circle mr-1">
+          <img alt="image" src="{{ url('storage/'.str_replace('public/','',auth()->user()->image)) }}" class="rounded-circle mr-1">
           <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->user()->name }}</div></a>
           <div class="dropdown-menu dropdown-menu-right">
             <div class="dropdown-title"></div>
             <a href="/profile" class="dropdown-item has-icon">
-              <i class="far fa-user"></i> Profile
+              <i class="far fa-user"></i>Profile
             </a>
             <div class="dropdown-divider"></div>
             <form action="/logout" method="post">
               @csrf
             {{-- <a class="dropdown-item has-icon text-danger"> --}}
-            <button type="submit" class="nav-link px-3 border-0"><i class="dropdown-item has-icon text-danger fas fa-sign-out-alt"> Logout</i></button>
+            <button class="bg-white border-0"><a class="dropdown-item has-icon">
+                <i class="bi bi-box-arrow-right"></i>Logout
+              </a></button>  
+            {{-- <button type="submit" class="nav-link px-3 border-0"><i class="dropdown-item has-icon text-danger fas fa-sign-out-alt"> Logout</i></button> --}}
             {{-- </a> --}}
             </form>
           </div>

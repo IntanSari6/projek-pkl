@@ -15,44 +15,34 @@
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">NIP</label>
                             <div class="col-sm-12 col-md-7">
-                                <input type="text" name="nip_teacher" class="form-control">
+                                <input type="text" name="nip_teacher" class="form-control" value="{{ auth()->user()->nip}}" readonly>
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Nama</label>
                             <div class="col-sm-12 col-md-7">
-                                <input type="text" name="teacher_name" class="form-control">
+                                <input type="text" name="teacher_name" class="form-control" value="{{ auth ()->user()->name }}" readonly>
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Kelas</label>
                             <div class="col-sm-12 col-md-7">
-                                <select name="class" class="form-control selectric">
-                                    <option>X PPLG</option>
-                                    <option>X DKV 1</option>
-                                    <option>X DKV 2</option>
-                                    <option>XI PPLG 1</option>
-                                    <option>XI PPLG 2</option>
-                                    <option>XI DKV 1</option>
-                                    <option>XI DKV 2</option>
-                                    <option>XII RPL</option>
-                                    <option>XII MM 1</option>
-                                    <option>XII MM 2</option>
-                                </select>
+                                <input type="text" name="class" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Mapel</label>
                             <div class="col-sm-12 col-md-7">
-                                <input type="text" name="subjects" class="form-control">
+                                <input type="text" name="subjects" class="form-control" >
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label class="col-form-label col-1 col-md-1 col-lg-1">Lab</label>
                             <div class="col-sm-12 col-md-7">
-                                <select name="lab" class="form-control selectric">
-                                    <option>1</option>
-                                    <option>2</option>
+                                <select class="form-select" arial-label="Default select example" name="lab" id="lab">
+                                    @foreach ($lab as $item)
+                                        <option value="{{$item->id}}">{{$item->lab_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

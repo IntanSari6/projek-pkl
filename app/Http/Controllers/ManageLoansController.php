@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class ManageLoansController extends Controller
 {
-    public function manage_loans()
+    public function manage_loans(Reqloans $reqloans)
     {
-        $reqloans = Reqloans::where('status', 'proses')->latest()->paginate(5);;
+        $reqloans = Reqloans::where('status', 'proses')->latest()->paginate(5);
         return view('manage_loans.index', compact('reqloans'));
     }
 

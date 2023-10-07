@@ -12,6 +12,11 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
+                                    @if(session()->has('error'))
+                                    <div class="alert alert-danger">
+                                        {{ session()->get('error') }}
+                                    </div>
+                                    @endif
                                 </div>
                                 <div class="card-body">
                                     <div class="fc-overflow">
@@ -116,7 +121,12 @@ $("#KalenderPeminjaman").fullCalendar({
         url: "/get-datamodal/"+info.title,
         success: function(res){
             console.log(res);
-            $('#datamodal-sedangdipakai').attr('href',res.action).text(res.action_text);
+            if(res.action_button=='show'){
+
+                $('#datamodal-sedangdipakai').attr('href',res.action).text(res.action_text).removeClass('d-none');
+            }else if(res.action_button=='hide'){
+                $('#datamodal-sedangdipakai').attr('href',null).text(res.action_text).addClass('d-none');
+            }
             $('#datamodal-nip_teacher').text(res.nip_teacher);
             $('#datamodal-teacher_name').text(res.teacher_name);
             $('#datamodal-class').text(res.class);

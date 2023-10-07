@@ -69,7 +69,7 @@
                                                 <td id='datamodal-finished'></td>
                                             </tr>
                                             <tr>
-                                                <th>Ulasan :</th>
+                                                <th>Pesan :</th>
                                                 <td id='datamodal-review'></td>
                                             </tr>
                                         </tbody>
@@ -114,7 +114,7 @@ $("#KalenderPeminjaman").fullCalendar({
         url: "/get-datamodal/"+info.title,
         success: function(res){
             console.log(res);
-            $('#datamodal-hapus').attr('href','get_deletedatamodal/'+res.id);
+            $('#datamodal-hapus').attr('href','get_datamodal_batalkan/'+res.id);
             $('#datamodal-nip_teacher').text(res.nip_teacher);
             $('#datamodal-teacher_name').text(res.teacher_name);
             $('#datamodal-class').text(res.class);

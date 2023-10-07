@@ -12,7 +12,6 @@ class InventoryLabController extends Controller
     {
         $lab = Lab::all();
         return view('inventory-lab.index', [
-            'inventory' => InventoryLab::all(),
             'lab' => $lab
         ]);
 

@@ -9,6 +9,7 @@
 <div class="col-lg-8">
     <form method="post" action="/manage-inventory-lab" class="mb-5" enctype="multipart/form-data">
         @csrf
+        <input type="hidden" name="lab_id" value="{{ $lab_id }}">
       <div class="mb-3">
         <label for="name_goods" class="form-label">Nama Barang</label>
         <input type="text" class="form-control  @error('name_goods') is-invalid @enderror" id="name_goods" name="name_goods" required autofocus value="{{old('name_goods')}}">
@@ -36,15 +37,7 @@
             </div>
         @enderror
         </div>
-        <div class="mb-3">
-            <label for="lab_id" class="form-label">Lab</label>
-            <input type="number" class="form-control @error('lab_id') is-invalid @enderror" id="lab_id" name="lab_id" required value="{{old('lab_id')}}">
-            @error('lab_id')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-        @enderror
-        </div>
+        
         
       <button type="submit" class="btn btn-primary">Tambah</button>
     </form>

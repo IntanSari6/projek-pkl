@@ -15,7 +15,7 @@
   
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>SMKS MAHAPUTRA CERDAS UTAMA</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>SMKS MAHAPUTRA CERDAS UTAMA</span></strong>.
       </div>
   
     </div>

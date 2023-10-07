@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Awikwok</title>
+    <title>Lab Mahaputra</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -18,6 +18,7 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/assets/modules/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/fullcalendar.min.css')}}" />
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -54,6 +55,9 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
+    <script src="{{ asset('dist/assets/modules/jquery.min.js')}}"></script>
+    <script src="{{ asset('assets/js/moment.min.js')}}"></script>
+    <script src="{{ asset('assets/js/fullcalendar.min.js')}}"></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -61,7 +65,7 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
+@stack('js')
 </body>
 
 </html>

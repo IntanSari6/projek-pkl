@@ -41,9 +41,9 @@ class ManageInventoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($lab_id)
     {
-        return view ('manage-inventory-lab.create');
+        return view ('manage-inventory-lab.create', compact('lab_id'));
     }
 
     /**
@@ -69,7 +69,7 @@ class ManageInventoryController extends Controller
 
         // InventoryLab::create($validateData);
 
-        return redirect('/lab/'.$inventory->lab_id)->with('success', 'New post has been added!');
+        return redirect('/lab/'.$inventory->lab_id)->with('success','Data Berhasil Ditambahkan');
     }
 
     /**
@@ -118,12 +118,12 @@ class ManageInventoryController extends Controller
         // $edit->kode_barang = $request->input('kode_barang');
         // $edit->status = $request->input('status');
         $edit->update([
-            'nama_barang'=>$request->input('nama_barang'),
-            'kode_barang'=>$request->input('kode_barang'),
+            'name_goods'=>$request->input('name_goods'),
+            'item_code'=>$request->input('item_code'),
             'status'=>$request->input('status'),
         ]);
 
-        return redirect('/lab/'.$edit->lab_id)->with('success', 'Post has been updated!');
+        return redirect('/lab/'.$edit->lab_id)->with('success','Data Berhasil Diedit');
     }
 
     /**
@@ -136,6 +136,6 @@ class ManageInventoryController extends Controller
     public function destroy(InventoryLab $inventory,$id)
     {
         InventoryLab::destroy($id);
-        return redirect('/manage-inventory-lab')->with('success', 'Post has been deleted!');
+        return redirect('/manage-inventory-lab')->with('success','Data Berhasil Dihapus');
     }
 }

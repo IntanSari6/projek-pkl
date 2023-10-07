@@ -9,7 +9,7 @@ class LandingPageController extends Controller
 {
     public function landing_page() {
 
-        $reqloan = Reqloans::whereIn('status', ['terima','sedang dipakai', 'selesai'])->paginate(5);
+        $reqloan = Reqloans::whereIn('status', ['terima','sedang dipakai','selesai'])->latest()->paginate(5);
         return view('landing-page', compact('reqloan'));
     }
 }

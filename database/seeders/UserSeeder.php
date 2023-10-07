@@ -18,20 +18,21 @@ class UserSeeder extends Seeder
             'name' => 'Intan',
             'email' => 'intan@gmail.com',
             'password' => bcrypt('12345'),
-            'nip' => '5643',
-            'subjects' => 'Matematika',
+            'nip' => '1001',
+            'subjects' => 'pbo',
             'gender' => 'Perempuan',
-            'image' => 'intan.jpg'
-        ]);
-
-        User::create([
-            'name' => 'Iras',
-            'email' => 'sari@gmail.com',
-            'password' => bcrypt('12345'),
-            'nip' => '7890',
-            'subjects' => 'Indonesia',
-            'gender' => 'Perempuan',
+            'is_admin' => '1',
             'image' => 'intann.png'
         ]);
+
+        // User::create([
+        //     'name' => 'Iras',
+        //     'email' => 'sari@gmail.com',
+        //     'password' => bcrypt('12345'),
+        //     'nip' => '7890',
+        //     'subjects' => 'pbo',
+        //     'gender' => 'Perempuan',
+        //     'image' => 'intann.png'
+        // ]);
     }
 }

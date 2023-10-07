@@ -22,8 +22,8 @@
             Pilih
           </button>
           <div class="dropdown-menu">
-            @foreach ($labs as $lab)
-            <a class="dropdown-item" href="/lab/{{$lab->id}}">{{$lab->lab_name}}</a>
+            @foreach ($labs as $item)
+            <a class="dropdown-item" href="/lab/{{$item->id}}">{{$item->lab_name}}</a>
            @endforeach
 
           </div>
@@ -33,7 +33,7 @@
 
     <div class="card-body p-0">
       <div class="table-responsive">
-        <a href="/manage-inventory-lab/create" class="btn btn-primary mb-3">Tambah</a>
+        <a href="/manage-inventory-lab/{{ $lab->id }}/create" class="btn btn-primary mb-3">Tambah</a>
         <table class="table table-striped table-md">
           <thead>
           <tr>

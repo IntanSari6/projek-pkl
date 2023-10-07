@@ -7,7 +7,9 @@
     <br>
     <div class="col-12 col-md-6 col-lg-12">
         <div class="buttons pt-3 pb-2 mt-9">
+            @if(auth()->user()->is_admin==0)
         <a href="/requestLoans/create" class="btn btn-icon btn-primary">Lanjut</a>
+        @endif
     </div>
     </div>
         <div class="card">
@@ -28,7 +30,7 @@
                         </tr>
                         @foreach ($reqloans as $req)
                             <tr>
-                                <td>{{ $req->id }}</td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $req->nip_teacher }}</td>
                                 <td>{{ $req->teacher_name }}</td>
                                 <td>{{ $req->class }}</td>
@@ -46,8 +48,10 @@
                                     <a href="#" class="btn btn-warning">Proses</a>
                                     @elseif ($req->status=='sedang dipakai')
                                     <a href="#" class="btn btn-primary">Sedang dipakai</a>
-                                    @elseif ($req->status=='hapus')
+                                    @elseif ($req->status=='selesai')
                                     <a href="#" class="btn btn-success">Selesai</a>
+                                    @elseif ($req->status=='batal')
+                                    <a href="#" class="btn btn-danger">Dibatalkan</a>
                                     @endif
                                 </td>
                             </tr>

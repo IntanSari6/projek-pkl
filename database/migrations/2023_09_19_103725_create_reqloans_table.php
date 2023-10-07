@@ -24,6 +24,7 @@ class CreateReqloansTable extends Migration
             $table->dateTime('finished');
             $table->text('review');
             $table->string('status')->default('proses');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }
