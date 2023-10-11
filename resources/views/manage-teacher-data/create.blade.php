@@ -71,7 +71,7 @@
             <select class="form-select" arial-label="Default select example" name="is_admin" id="is_admin" @error('is_admin') is-invalid @enderror>
                 {{-- <option value="Pilih">Pilih</option> --}}
                 <option value="1">Ya</option>
-                <option value="0">No</option>
+                <option value="0">Tidak</option>
             </select>
             </div>
         </div>

@@ -20,7 +20,18 @@
       </div>
       <div class="mb-3">
         <label for="color" class="form-label">Warna</label>
-        <input type="text" class="form-control @error('color') is-invalid @enderror" id="color" name="color" required value="{{old('color')}}">
+        <div class="col-sm-12 col-md-12">
+          <select name="color" class="form-control selectric">
+            <option> primary </option>
+            <option> secondary </option>
+            <option> success </option>
+            <option> danger </option>
+            <option> warning </option>
+            <option> info </option>
+            <option> light </option>
+            <option> dark </option>
+          </select>
+        </div>
         @error('color')
         <div class="invalid-feedback">
             {{ $message }}
