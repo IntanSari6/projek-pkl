@@ -24,6 +24,7 @@ use App\Http\Controllers\ScheduleController;
 |
 */
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('beranda');
+Route::get('/get-data/{title}', [LandingPageController::class, 'get_datamodal']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);

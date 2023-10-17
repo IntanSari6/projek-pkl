@@ -161,7 +161,7 @@ $("#KalenderPeminjaman").fullCalendar({
   events: [
     @foreach($reqloan as $item)
     {
-      title: '{{$item->id}}-{{$item->teacher_name}}',
+      title: '{{$item->id}}-{{$item->status}}', 
       start: '{{$item->start}}',
       end: '{{$item->finished}}',
       backgroundColor: '{{ ($item->status=="terima") ? "#808000" : "#6777ee"}}',
@@ -175,7 +175,7 @@ $("#KalenderPeminjaman").fullCalendar({
     $('#callmodal').click();
     $.ajax({
         type:'get',
-        url: "/get-datamodal/"+info.title,
+        url: "/get-data/"+info.title,
         success: function(res){
             console.log(res);
             if(res.action_button=='show'){

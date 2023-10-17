@@ -111,9 +111,9 @@ class ManageTeacherDataController extends Controller
 
         $rules =([
             'name' => 'required|max:255',
-            'email' => 'required|email:dns|unique:users',
+            'email' => 'email:dns|unique:users',
             'password' => 'required',
-            'nip' => 'required|unique:users',
+            'nip' => 'unique:users',
             'subjects' => 'required',
             'gender' => 'required',
             'is_admin' => 'required',

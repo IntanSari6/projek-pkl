@@ -22,7 +22,7 @@
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" required value="{{$user->email}}">
+        <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" required value="{{$user->email}}" disabled>
         @error('email')
         <div class="invalid-feedback">
             {{ $message }}
@@ -31,7 +31,7 @@
       </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="text" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required>
+            <input type="text" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required value="{{$user->password}}">
             @error('password')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -40,7 +40,7 @@
         </div>
         <div class="mb-3">
             <label for="nip" class="form-label">NIP</label>
-            <input type="text" class="form-control @error('nip') is-invalid @enderror" id="nip" name="nip" required>
+            <input type="text" class="form-control @error('nip') is-invalid @enderror" id="nip" name="nip" value="{{$user->nip}}" disabled>
             @error('nip')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -49,7 +49,7 @@
         </div>
         <div class="mb-3">
             <label for="subjects" class="form-label">Mata Pelajaran</label>
-            <input type="text" class="form-control @error('subjects') is-invalid @enderror" id="subjects" name="subjects" required>
+            <input type="text" class="form-control @error('subjects') is-invalid @enderror" id="subjects" name="subjects" required value="{{$user->subjects}}">
             @error('subjects')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -67,15 +67,15 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="is_admin" class="form-label">is_admin</label>
-            <img class="img-preview img-fluid mb-3 col-sm-5">
-            <input class="form-control @error('is_admin') is-invalid @enderror" type="text" id="is_admin" name="is_admin" required>
-          </div>
-          @error('is_admin')
-          <div class="invalid-feedback">
-              {{ $message }}
-          </div>
-          @enderror
+            <label for="is_admin" class="form-label">Admin</label>
+            <div class="mb-3 col-50 ">
+            <select class="form-select" arial-label="Default select example" name="is_admin" id="is_admin" @error('is_admin') is-invalid @enderror>
+                {{-- <option value="Pilih">Pilih</option> --}}
+                <option value="1">Ya</option>
+                <option value="0">Tidak</option>
+            </select>
+            </div>
+        </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image</label>
             <img class="img-preview img-fluid mb-3 col-sm-5">

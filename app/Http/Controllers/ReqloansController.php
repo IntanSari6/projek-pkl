@@ -8,12 +8,13 @@ use App\Models\Lab;
 
 class ReqloansController extends Controller
 {
+    
     public function index()
-    {
-        $reqloans = Reqloans::where('user_id',auth()->user()->id)->latest()->paginate(5);
-        return view('requestLoans.index', compact(['reqloans']));
+   {
+    $reqloans = Reqloans::where('user_id',auth()->user()->id)->latest()->paginate(5);
+    return view('requestLoans.index', compact(['reqloans']));
 
-    }
+}
 
     public function create()
     {
@@ -28,6 +29,5 @@ class ReqloansController extends Controller
     {
         Reqloans::create(array_merge($request->except(['_token']),['user_id'=>auth()->user()->id]));
         return redirect('/requestLoans');
-        // dd($request->except(['_token']));
     }
 }

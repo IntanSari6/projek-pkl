@@ -18,14 +18,15 @@ class ScheduleController extends Controller
 
         $ipAdress = $_SERVER['REMOTE_ADDR'];
         $Ip = explode('.',$ipAdress);
-        if($Ip[0]=='192' && $Ip[1]=='168' && $Ip[2]=='1'){
-            Reqloans::where('id', $id)->update([
+        $reqloans = Reqloans::where('id', $id);
+        $cekwaktu=$reqloans->first();
+        if(date('H:i', strtotime($cekwaktu->start))<=date('H:i', strtotime(now()))){
+            $reqloans->update([
                 'status'=>'sedang dipakai'
             ]);
             return back();
-        } else {
-            return back()->with('error','Silahkan sambungkan dengan WiFi Lab!!');
         }
+        return back()->with('error', 'Belum waktunya masuk');
         
     }
     public function get_selesaidatamodal(string $id){
