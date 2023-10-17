@@ -1,5 +1,4 @@
 @extends('main')
-
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mt-5 border-bottom">
         <h3>Tata Tertib</h3>
@@ -16,7 +15,6 @@
                             <p>Selalu menjaga kebersihan dan kerapihan lab</p>
                         </div>
                     </div>
-
                     <div class="activity">
                         <div class="activity-icon bg-primary text-white shadow-primary"></div>
                         <div class="activity-detail">
@@ -24,7 +22,6 @@
                             <p>Berhak menggunakan komputer pada saat jam sekolah</p>
                         </div>
                     </div>
-
                     <div class="activity">
                         <div class="activity-icon bg-primary text-white shadow-primary"></div>
                         <div class="activity-detail">

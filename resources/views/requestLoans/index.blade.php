@@ -29,6 +29,7 @@
                             <th>Status</th>
                         </tr>
                         @foreach ($reqloans as $req)
+                        
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $req->nip_teacher }}</td>

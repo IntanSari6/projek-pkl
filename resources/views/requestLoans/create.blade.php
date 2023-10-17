@@ -7,7 +7,6 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                
                 <form action="/manage_loans/store" method="post">
                     @csrf
                     <br>
